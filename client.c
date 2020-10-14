@@ -65,7 +65,7 @@ int main(){
 	// Filling server information 
 	servaddr.sin_family = AF_INET; 
 	servaddr.sin_port = htons(PORT); 
-	servaddr.sin_addr.s_addr = inet_addr("192.168.1.102"); 
+	servaddr.sin_addr.s_addr = INADDR_ANY; 
 	
 
 	if(connect(sockfd, (struct sockaddr *)&servaddr, sizeof(servaddr))!= 0)
