@@ -8,7 +8,7 @@
 #include <netinet/in.h> 
 #include <pthread.h> 
 
-int PORT = 8080;
+int PORT = 8000;
 #define MAXLINE 1024
 int ch=1;
 void *reading(void * input)
