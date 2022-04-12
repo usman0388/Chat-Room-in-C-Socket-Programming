@@ -31,14 +31,18 @@ void *writing(void *input)
 	char buffer[MAXLINE];
 	while(1)
 	{		
-		scanf("%s[^\n]", buffer);
+		fgets(buffer, MAXLINE, stdin);
 		write(newfd, buffer, strlen(buffer));
-		if(strcmp(buffer,"END")==0)
+		//If the user enters END thent the loop breaks and turns ch to 0 which will break the reading loop aswell
+		if(strcmp(buffer,"END\n")==0)
 		{
 			ch=0;
 			break;
 		}
 
+		for(int i=0;i<MAXLINE;i++){
+			buffer[i]= '\0';
+		}
 		printf("message send..\n");
 	}
 	close(newfd);
