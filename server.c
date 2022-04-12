@@ -44,7 +44,7 @@ void *myThread(void *arg)
 		memset(buffer, '\0', sizeof(buffer));
 		int n = read(connected_clients[pos].newfd, buffer, MAXLINE);
 		buffer[n] = '\0';
-		if(strcmp(buffer,"END")==0)
+		if(strcmp(buffer,"END\n")==0)
 		{
 			break;
 		}	
